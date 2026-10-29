@@ -1,0 +1,51 @@
+---
+import Base from "../layouts/Base.astro";
+import { site } from "../data/site";
+import { classFacts } from "../data/class";
+
+const description = `${site.name}: ${site.tagline} Free Body park class and personal training in Orange County.`;
+---
+
+<Base title={site.name} description={description}>
+  <p class="kicker">{site.name}</p>
+  <h1 class="headline">{site.hero}</h1>
+  <p class="lede">{site.who}</p>
+
+  <section class="offerings" aria-labelledby="offerings-heading">
+    <h2 id="offerings-heading" class="section-label">
+      {site.offeringsSubhead}
+    </h2>
+    <ul class="offering-list">
+      <li class="offering">
+        <p class="cell-label">Offering</p>
+        <h3 class="offering-title">
+          <a href="/free-body">{classFacts.title}</a>
+        </h3>
+        <p class="muted">
+          Sunday park yoga in Tustin. Sixty minutes. Donation-based. Weather call
+          on the class page.
+        </p>
+        <p class="offering-cta">
+          <a href="/free-body">Class facts and weather</a>
+        </p>
+      </li>
+      <li class="offering">
+        <p class="cell-label">Offering</p>
+        <h3 class="offering-title">
+          <a href="/training">Personal training</a>
+        </h3>
+        <p class="muted">
+          One-to-one strength work. Inquire for rates. Yoga privates under the
+          same path.
+        </p>
+        <p class="offering-cta">
+          <a href="/training">How to inquire</a>
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <p class="home-about">
+    <a href="/about">About and scope</a>
+  </p>
+</Base>
